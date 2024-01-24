@@ -1,3 +1,6 @@
+import time
+
+
 # Function to determine if a number (n) is prime by finding two factors
 def isPrime(n):
     # Loop through each possible factor upto n/2 and then check for possible factors with a nested loop
@@ -27,6 +30,7 @@ def isPrimeV2(n):
 
 
 if __name__ == "__main__":
+    start = time.time()
     print(isPrime(2))  # Expect: 'Prime!'
     print(isPrime(3))  # Expect: 'Prime!'
     print(isPrime(5))  # Expect: 'Prime!'
@@ -36,13 +40,18 @@ if __name__ == "__main__":
     print(isPrime(200))  # Expect: False
     print(isPrime(50))  # Expect: False
     print(isPrime(2000000))  # Expect: False
+    end = time.time()
+    print("first function took {} seconds".format(end - start))
 
+    start = time.time()
     print(isPrimeV2(2))  # Expect: 'Prime!'
     print(isPrimeV2(3))  # Expect: 'Prime!'
     print(isPrimeV2(5))  # Expect: 'Prime!'
-    print(isPrimeV2(6))  # Expect: False
+    print(isPrimeV2(9))  # Expect: False
     print(isPrimeV2(79))  # Expect: 'Prime!'
     print(isPrimeV2(100))  # Expect: False
     print(isPrimeV2(200))  # Expect: False
     print(isPrimeV2(50))  # Expect: False
     print(isPrimeV2(2000000))  # Expect: False
+    end = time.time()
+    print("second function took {} seconds".format(end - start))
