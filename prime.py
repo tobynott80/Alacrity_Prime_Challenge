@@ -9,6 +9,15 @@ def isPrime(n):
     return "Prime!"
 
 
+# Returns an array of the prime numbers in a given array of integers
+def isArrPrime(arr):
+    primes = []
+    for n in arr:  # Loop through given array
+        if isPrime(n):
+            primes.append(n)  # append to primes array if is prime
+    return primes
+
+
 if __name__ == "__main__":
     print(isPrime(2))  # Expect: 'Prime!'
     print(isPrime(3))  # Expect: 'Prime!'
@@ -19,3 +28,5 @@ if __name__ == "__main__":
     print(isPrime(200))  # Expect: False
     print(isPrime(50))  # Expect: False
     print(isPrime(2000000))  # Expect: False
+
+    print(isArrPrime(range(2, 100)))
