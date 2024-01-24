@@ -1,6 +1,6 @@
 # Function to determine if a number (n) is prime by finding one factors (modulus operator)
 def isPrime(n):
-    if n == 1:  # 1 is not prime
+    if n <= 1:  # 1 is not prime, zero is not prime, negative numbers are not prime
         return False
     # Loop through each possible factor (stop halfway through, because if a factor exists, we would have found it by then)
     for i in range(2, (int(n / 2) + 1)):
@@ -32,3 +32,7 @@ if __name__ == "__main__":
     print(isPrime(2000000))  # Expect: False
 
     print(isArrPrime(range(2, 100)))
+
+    print(isPrime(0))
+    print(isPrime(1))
+    print(isPrime(-17))
