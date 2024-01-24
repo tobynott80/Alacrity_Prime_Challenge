@@ -1,5 +1,7 @@
 # Function to determine if a number (n) is prime by finding one factors (modulus operator)
 def isPrime(n):
+    if n == 1:  # 1 is not prime
+        return False
     # Loop through each possible factor (stop halfway through, because if a factor exists, we would have found it by then)
     for i in range(2, (int(n / 2) + 1)):
         # Modulo check to see if i is a factor of n (i.e when n is divided by i, is the remainder 0?)
